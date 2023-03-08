@@ -13,7 +13,7 @@ function initBackground(){
     const displacement = loader.load("displace_map.jpg");
     const displacementRev = loader.load("displace_map_rev.jpg");
     const alphaMap = loader.load("alpha_map.jpg");
-    const planeTexture = loader.load("square.png")
+    const planeTexture = loader.load("square.png");
 
     const renderer = new THREE.WebGLRenderer({canvas: maincanvas});
     renderer.setSize( window.innerWidth, window.innerHeight );
