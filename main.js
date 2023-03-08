@@ -19,7 +19,7 @@ function initBackground(){
     renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
 
-    const light = new THREE.AmbientLight( 0xfffffff ); // soft white light
+    const light = new THREE.AmbientLight( 0xC1C1C1 ); // soft white light
     scene.add( light );
 
     const geometry = new THREE.BoxGeometry( 1, 1, 1 );
