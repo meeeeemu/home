@@ -76,6 +76,7 @@ function initBackground(){
     composer.addPass(renderPass);
 
     var unrealBloomPass = new UnrealBloomPass();
+    unrealBloomPass.bloomThreshold = 0.14;
     composer.addPass(unrealBloomPass);
 
     camera.position.z = 10;
