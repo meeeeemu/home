@@ -3,7 +3,6 @@ import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OrbitControls } from 'https://threejs.org/examples/jsm/controls/OrbitControls.js';
-import { GlitchPass } from 'three/addons/postprocessing/GlitchPass.js';
 
 function initBackground(){
     const scene = new THREE.Scene();
