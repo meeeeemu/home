@@ -9,10 +9,13 @@ function initBackground(){
     const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
     const loader = new THREE.TextureLoader();
-    const displacement = loader.load("displace_map.jpg");
-    const displacementRev = loader.load("displace_map_rev.jpg");
-    const alphaMap = loader.load("alpha_map.jpg");
-    const planeTexture = loader.load("square.png");
+    const displacement = loader.load("./media/displace_map.jpg");
+    const displacementRev = loader.load("./media/displace_map_rev.jpg");
+    const alphaMap = loader.load("./media/alpha_map.jpg");
+    const planeTexture = loader.load("./media/square.png");
+    const maincanvas = document.getElementById("maincanvas");
+    maincanvas.style.height = window.outerHeight
+    maincanvas.style.width = window.outerWidth
 
     const renderer = new THREE.WebGLRenderer({canvas: maincanvas});
     renderer.setSize( window.innerWidth, window.innerHeight );
