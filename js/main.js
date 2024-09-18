@@ -50,6 +50,7 @@ function createTesseractGeometry() {
     return geometry;
 }
 
+
 function initBackground(){
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -61,8 +62,8 @@ function initBackground(){
     const planeTexture = loader.load("./media/square.png");
     const particleTexture = loader.load('./assets/dot.png');
     const maincanvas = document.getElementById("maincanvas");
-    maincanvas.style.height = window.outerHeight
-    maincanvas.style.width = window.outerWidth
+    maincanvas.style.height = window.innerHeight
+    maincanvas.style.width = window.innerWidth
 
     const renderer = new THREE.WebGLRenderer({canvas: maincanvas});
     renderer.setSize( window.innerWidth, window.innerHeight );
@@ -179,6 +180,8 @@ function initBackground(){
         resized = false;
         renderer.setSize(window.innerWidth, window.innerHeight);
         const canvas = renderer.domElement;
+        canvas.style.height = window.innerHeight
+        canvas.style.width = window.innerWidth
         camera.aspect = canvas.clientWidth / canvas.clientHeight;
         camera.updateProjectionMatrix();
     }

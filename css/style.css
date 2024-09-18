@@ -8,6 +8,10 @@ body {
     background-color: #000;
 }
 
+.navbar-burger {
+    display: none !important;
+}
+
 .content.level {
     visibility: visible;
     z-index: 9;
@@ -26,8 +30,14 @@ button:focus {
     box-shadow: none;
 }
 
+.content {
+    padding: 10px;
+}
+
 #maincanvas {
 
+    height: auto;
+    width: 100%;
     position: absolute;
     left: 0px;
     top: 0px;
@@ -36,7 +46,7 @@ button:focus {
 
 }
 
-a {
+a, button {
 
     font-family: 'Open Sans', sans-serif;
 
@@ -68,6 +78,134 @@ a {
 }
 
 .navbar {
+    width: 100%;
     opacity: 0.5;
 }
 
+@media only screen and (max-width: 768px) {
+    #maincanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .message-body {
+        font-size: 1rem; /* Reduce font size for readability */
+    }
+    html, body {
+        overflow-y: auto;
+        height: auto;
+    }
+    .navbar-item {
+        font-size: 0.6rem; /* Adjust navbar item sizes */
+        display: block; /* Stack navbar items vertically */
+        text-align: center; /* Center-align the items */
+        padding: 5px 0.6%; /* Add some padding for better spacing */
+    }
+    .title {
+        font-size: 0.8rem !important; /* Adjust navbar item sizes */
+        top: 10%;
+    }
+    .mute-button {
+        padding: 5px 10px; /* Make buttons smaller for mobile */
+        height: auto;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 896px) {
+    #maincanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .message-body {
+        font-size: 1rem; /* Reduce font size for readability */
+    }
+    html, body {
+        overflow-y: auto;
+        height: auto;
+    }
+    .navbar-item {
+        font-size: 0.6rem; /* Adjust navbar item sizes */
+        display: block; /* Stack navbar items vertically */
+        text-align: center; /* Center-align the items */
+        padding: 5px 1.4%; /* Add some padding for better spacing */
+    }
+    .title {
+        font-size: 0.8rem !important; /* Adjust navbar item sizes */
+        top: 10%;
+    }
+    .mute-button {
+        padding: 5px 10px; /* Make buttons smaller for mobile */
+        height: auto;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 812px) {
+    #maincanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .message-body {
+        font-size: 1rem; /* Reduce font size for readability */
+    }
+    html, body {
+        overflow-y: auto;
+        height: auto;
+    }
+    .navbar-item {
+        font-size: 0.6rem; /* Adjust navbar item sizes */
+        display: block; /* Stack navbar items vertically */
+        text-align: center; /* Center-align the items */
+        padding: 5px 0.7%; /* Add some padding for better spacing */
+    }
+    .title {
+        font-size: 0.8rem !important; /* Adjust navbar item sizes */
+        top: 10%;
+    }
+    .mute-button {
+        padding: 5px 10px; /* Make buttons smaller for mobile */
+        height: auto;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 852px) {
+    #maincanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .message-body {
+        font-size: 1rem; /* Reduce font size for readability */
+    }
+    html, body {
+        overflow-y: auto;
+        height: auto;
+    }
+    .navbar-item {
+        font-size: 0.6rem; /* Adjust navbar item sizes */
+        display: block; /* Stack navbar items vertically */
+        text-align: center; /* Center-align the items */
+        padding: 5px 1%; /* Add some padding for better spacing */
+    }
+    .title {
+        font-size: 0.8rem !important; /* Adjust navbar item sizes */
+        top: 10%;
+    }
+    .mute-button {
+        padding: 5px 10px; /* Make buttons smaller for mobile */
+        height: auto;
+        width: auto;
+    }
+}
