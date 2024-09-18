@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>mimu's silly website</title>
+    <title>mimu's sanctuary</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -18,12 +18,12 @@
     {
         "imports": {
           "three": "https://ga.jspm.io/npm:three@0.150.1/build/three.module.js",
-          "three-nebula": "https://ga.jspm.io/npm:three-nebula@10.0.3/build/esm/index.js",
           "three/addons/controls/OrbitControls.js": "https://ga.jspm.io/npm:three@0.150.1/examples/jsm/controls/OrbitControls.js",
           "three/addons/postprocessing/EffectComposer.js": "https://ga.jspm.io/npm:three@0.150.1/examples/jsm/postprocessing/EffectComposer.js",
           "three/addons/postprocessing/GlitchPass.js": "https://ga.jspm.io/npm:three@0.150.1/examples/jsm/postprocessing/GlitchPass.js",
           "three/addons/postprocessing/RenderPass.js": "https://ga.jspm.io/npm:three@0.150.1/examples/jsm/postprocessing/RenderPass.js",
-          "three/addons/postprocessing/UnrealBloomPass.js": "https://ga.jspm.io/npm:three@0.150.1/examples/jsm/postprocessing/UnrealBloomPass.js"
+          "three/addons/postprocessing/UnrealBloomPass.js": "https://ga.jspm.io/npm:three@0.150.1/examples/jsm/postprocessing/UnrealBloomPass.js",
+          "animejs": "https://ga.jspm.io/npm:animejs@3.2.2/lib/anime.es.js"
         },
         "scopes": {
           "https://ga.jspm.io/": {
@@ -45,28 +45,30 @@
   
   <canvas id="maincanvas" height="1080" width="1920"></canvas>
 
-  <script type="module" src="main.js"></script>
+  <audio id="background-music" src="./media/bg2.mp3" autoplay loop muted></audio>
+
+  <button class="mute-button button is-info is-small is-outlined">Mute</button>
 
   <nav class="navbar is-transparent is-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item is-size-4">
             mimu's website
         </a>
-      <a class="navbar-item" href="index.html">
+      <button class="navbar-item" id="home-button">
         home 
-      </a>
-      <a class="navbar-item" href="aboutme.html">
+      </button>
+      <button class="navbar-item" id="about-button">
         about me 
-      </a>
-      <a class="navbar-item" href="contact.html">
+      </button>
+      <button class="navbar-item" id="contact-button">
         contact
-      </a>
-      <a class="navbar-item" href="musicusage.html">
+      </button>
+      <button class="navbar-item" id="usage-button">
         music usage
-      </a>
-      <a class="navbar-item" href="links.html">
+      </button>
+      <button class="navbar-item" id="links-button">
         links
-      </a>
+      </button>
   
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
@@ -76,19 +78,117 @@
     </div>
   </nav>
 
-  <div class="level">
-    <div class="level-item">
-        <article class="message is-transparent has-background-dark">
-            <div class="message-body is-transparent has-background-dark has-text-primary-light is-size-3 has-text-left">
-                hello!!<br><br>
+  <div class="content">
 
-                i make music and do other stuff<br><br>
+    <div class="level">
+      <div class="level-item">
+          <article class="message is-transparent has-background-dark page1">
+              <div class="message-body is-transparent has-background-dark has-text-primary-light is-size-3 has-text-left">
+                  hello!!<br><br>
 
-                click the stuff at the top
-            </div>
-        </article>
+                  i make music and do other stuff<br><br>
+
+                  click the stuff at the top
+              </div>
+          </article>
+      </div>
     </div>
+
+    <div class="level">
+      <div class="level-item">
+          <article class="message is-transparent has-background-dark page2">
+              <div class="message-body is-transparent has-background-dark has-text-primary-light is-size-5 has-text-left up-a-little">
+                  <b>hello!! i am mimu</b> <br>
+                  <div class="is-size-8"></div>
+                  i am 20 years old (time sure is flying by!)<br><br>
+  
+                  i have been making music for like 5 years at this point and i still have no idea what i'm doing<br><br>
+  
+                  some people think it's good and that's pretty cool<br><br>
+  
+                  i am from the uk<br><br>
+  
+                  i study cyber security / network engineering<br><br>
+  
+                  i also work on and manage:<br><br>
+  
+                  -- <b>the zone MvM (a team fortress 2 server)</b><br><br>
+  
+                  -- <b>a little home server</b><br>
+                  --- runs proxmox with a buncha stuff! (i even have a cool ass homepage :3)<br>
+                  --- a debian vm for a local test tf2 server<br>
+  
+              </div>
+          </article>
+      </div>
+    </div>
+
+    <div class="level">
+      <div class="level-item">
+          <article class="message is-transparent has-background-dark page3">
+              <div class="message-body is-transparent has-background-dark has-text-primary-light is-size-4">
+  
+                  i usually dont accept discord requests so if you Really need to contact me then just email me<br><br>
+  
+                  business email: businessmimu@gmail.com
+  
+              </div>
+          </article>
+      </div>
+    </div>
+
+    <div class="level">
+      <div class="level-item">
+          <article class="message is-transparent has-background-dark page4">
+              <div class="message-body is-transparent has-background-dark has-text-primary-light">
+                      my music is free to use for the following <b>as long as you give credit</b>:
+                      <br>
+                      - mods for any game (not friday night funkin thanks :grinning:)<br>
+                      - community made rhythm game charts<br>
+                      - youtube videos (or any videos of any kind) (i dont put my music into content id so don't worry about that)<br>
+                      - pretty much anything that creativity can make (animations and such)<br>
+                      - remixes<br>
+                      <br>
+                      my music can be used in these things as long as <b>i give you permission and credit is given</b>:<br>
+                      <br>
+                      - games (like if you wanna put my music in a rhythm game and sell that rhythm game or something)<br>
+                      - commercial things<br>
+                      <br>
+                      Do Not (i will be angry and probably dmca/copyright you):<br>
+                      <br>
+                      - reupload my music without permission<br>
+                      - claim my music as your own<br>
+                      - make money off of my music without permission<br>
+                      <br>
+                      if you're unsure of anything please send an email to businessmimu@gmail.com<br>
+              </div>
+          </article>
+      </div>
+    </div>
+
+    <div class="level">
+      <div class="level-item">
+          <article class="message is-transparent has-background-dark page5">
+              <div class="message-body is-transparent has-background-dark has-text-primary-light is-size-4">
+  
+                  <a href="https://www.youtube.com/channel/UCDQ20qEr4o8Fvt2oJ52FyVQ">youtube</a><br><br>
+  
+                  <a href="https://twitch.tv/meeeeemu">twitch</a><br><br>
+  
+                  <a href="https://soundcloud.com/meeeemu">soundcloud</a><br><br>
+  
+                  <a href="https://thememefbi.newgrounds.com/">newgrounds</a>
+                  
+              </div>
+          </article>
+      </div>
+    </div>
+
   </div>
+
+  <script type="module" src="./js/mute.js"></script>
+  <script type="module" src="./js/buttonHandler.js"></script>
+  <script type="module" src="./js/main.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,73 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+html {
+    overflow: hidden;
+}
+
+body {
+    background-color: #000;
+}
+
+.content.level {
+    visibility: visible;
+    z-index: 9;
+}
+
+.navbar-item {
+    background-color: rgba(0,0,0,0);
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    z-index: 9;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#maincanvas {
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 5;
+    background-color: #000;
+
+}
+
+a {
+
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.message {
+
+    display: none;
+    margin: auto;
+    top: 13%;
+    position: absolute;
+    z-index: 10;
+    mix-blend-mode: hard-light;
+    background-color: transparent;
+
+}
+
+.message-body {
+    background-color: transparent;
+}
+
+.mute-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 500;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.navbar {
+    opacity: 0.5;
+}
+
