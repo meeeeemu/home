@@ -91,24 +91,24 @@ a, button {
         height: 100%;
     }
     .message-body {
-        font-size: 1rem; /* Reduce font size for readability */
+        font-size: 1rem;
     }
     html, body {
         overflow-y: auto;
         height: auto;
     }
     .navbar-item {
-        font-size: 0.6rem; /* Adjust navbar item sizes */
-        display: block; /* Stack navbar items vertically */
-        text-align: center; /* Center-align the items */
-        padding: 5px 0.6%; /* Add some padding for better spacing */
+        font-size: 0.6rem;
+        display: block;
+        text-align: center;
+        padding: 5px 0.6%;
     }
     .title {
-        font-size: 0.8rem !important; /* Adjust navbar item sizes */
+        font-size: 0.8rem !important;
         top: 10%;
     }
     .mute-button {
-        padding: 5px 10px; /* Make buttons smaller for mobile */
+        padding: 5px 10px;
         height: auto;
         width: auto;
     }
@@ -123,24 +123,24 @@ a, button {
         height: 100%;
     }
     .message-body {
-        font-size: 1rem; /* Reduce font size for readability */
+        font-size: 1rem;
     }
     html, body {
         overflow-y: auto;
         height: auto;
     }
     .navbar-item {
-        font-size: 0.6rem; /* Adjust navbar item sizes */
-        display: block; /* Stack navbar items vertically */
-        text-align: center; /* Center-align the items */
-        padding: 5px 1.4%; /* Add some padding for better spacing */
+        font-size: 0.6rem;
+        display: block;
+        text-align: center;
+        padding: 5px 1.4%;
     }
     .title {
-        font-size: 0.8rem !important; /* Adjust navbar item sizes */
+        font-size: 0.8rem !important;
         top: 10%;
     }
     .mute-button {
-        padding: 5px 10px; /* Make buttons smaller for mobile */
+        padding: 5px 10px;
         height: auto;
         width: auto;
     }
@@ -155,24 +155,24 @@ a, button {
         height: 100%;
     }
     .message-body {
-        font-size: 1rem; /* Reduce font size for readability */
+        font-size: 1rem;
     }
     html, body {
         overflow-y: auto;
         height: auto;
     }
     .navbar-item {
-        font-size: 0.6rem; /* Adjust navbar item sizes */
-        display: block; /* Stack navbar items vertically */
-        text-align: center; /* Center-align the items */
-        padding: 5px 0.7%; /* Add some padding for better spacing */
+        font-size: 0.6rem;
+        display: block;
+        text-align: center;
+        padding: 5px 0.7%;
     }
     .title {
-        font-size: 0.8rem !important; /* Adjust navbar item sizes */
+        font-size: 0.8rem !important;
         top: 10%;
     }
     .mute-button {
-        padding: 5px 10px; /* Make buttons smaller for mobile */
+        padding: 5px 10px;
         height: auto;
         width: auto;
     }
@@ -187,24 +187,24 @@ a, button {
         height: 100%;
     }
     .message-body {
-        font-size: 1rem; /* Reduce font size for readability */
+        font-size: 1rem;
     }
     html, body {
         overflow-y: auto;
         height: auto;
     }
     .navbar-item {
-        font-size: 0.6rem; /* Adjust navbar item sizes */
-        display: block; /* Stack navbar items vertically */
-        text-align: center; /* Center-align the items */
-        padding: 5px 1%; /* Add some padding for better spacing */
+        font-size: 0.6rem;
+        display: block;
+        text-align: center;
+        padding: 5px 1%;
     }
     .title {
-        font-size: 0.8rem !important; /* Adjust navbar item sizes */
+        font-size: 0.8rem !important;
         top: 10%;
     }
     .mute-button {
-        padding: 5px 10px; /* Make buttons smaller for mobile */
+        padding: 5px 10px;
         height: auto;
         width: auto;
     }
