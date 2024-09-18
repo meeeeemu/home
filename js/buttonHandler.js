@@ -22,7 +22,7 @@ function showPage(id) {
             scale: [1, 0.9],
             opacity: [1, 0],
             easing: 'easeInOutQuad',
-            duration: 1500,
+            duration: 1000,
             translateY: [0, 100],
             complete: function () {
                 currentPage.style.display = 'none';
@@ -48,7 +48,7 @@ function showNewPage(id) {
             opacity: [0, 1],
             translateY: [-100, 0],
             easing: 'easeInOutQuad',
-            duration: 1500,
+            duration: 1000,
             complete: function () {
                 transitionStatus = false;
             }

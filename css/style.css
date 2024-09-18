@@ -8,10 +8,6 @@ body {
     background-color: #000;
 }
 
-.navbar-burger {
-    display: none !important;
-}
-
 .content.level {
     visibility: visible;
     z-index: 9;
