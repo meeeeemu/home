@@ -8,9 +8,6 @@ function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
 }
 
-let fadeSpeed = 0.002;  // Control how fast particles fade
-let moveSpeed = 0.01;   // Control how fast particles move
-
 const tesseractVertices = [
     [-1, -1, -1, -1], [1, -1, -1, -1], [-1, 1, -1, -1], [1, 1, -1, -1],
     [-1, -1, 1, -1], [1, -1, 1, -1], [-1, 1, 1, -1], [1, 1, 1, -1],
@@ -50,6 +47,17 @@ function createTesseractGeometry() {
     return geometry;
 }
 
+let tesseractMaterial, cubeMaterial, planeMaterial, planeMaterial2, spriteMaterial;
+
+let currentColor = new THREE.Color('#E6E6FA');
+let targetColor = new THREE.Color('#E6E6FA');
+let colorTransitionSpeed = 0.02;
+let isTransitioning = false;
+
+function changeColor(newColor) {
+    isTransitioning = true;
+    targetColor.set(newColor);
+}
 
 function initBackground(){
     const scene = new THREE.Scene();
@@ -76,13 +84,13 @@ function initBackground(){
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const geometry2 = new THREE.BoxGeometry( 0.5, 0.5, 0.5 );
     const geometry3 = new THREE.BoxGeometry( 0.25, 0.25, 0.25 );
-    const material = new THREE.MeshStandardMaterial({ 
+    cubeMaterial = new THREE.MeshStandardMaterial({ 
         color: '#CF9FFF',
         normalMap: alphaMap,
         transparent: true
     });
     
-    const spriteMaterial = new THREE.SpriteMaterial({
+    spriteMaterial = new THREE.SpriteMaterial({
         map: particleTexture,
         color: 0xffffff,
         transparent: true,
@@ -104,9 +112,9 @@ function initBackground(){
         spriteParticles.push(sprite);
     }
 
-    const cube = new THREE.Mesh(geometry, material);
-    const cube2 = new THREE.Mesh(geometry2, material);
-    const cube3 = new THREE.Mesh(geometry3, material);
+    const cube = new THREE.Mesh(geometry, cubeMaterial);
+    const cube2 = new THREE.Mesh(geometry2, cubeMaterial);
+    const cube3 = new THREE.Mesh(geometry3, cubeMaterial);
     cube3.position.y -= 0.4;
     cube2.position.y += 0.6;
     cube.position.y += 2;
@@ -117,7 +125,7 @@ function initBackground(){
     orbitControls.autoRotateSpeed = 0.5;
     orbitControls.autoRotate = true;
 
-    const planemat = new THREE.MeshStandardMaterial({
+    planeMaterial = new THREE.MeshStandardMaterial({
         color: '#CF9FFF',
         map: planeTexture,
         displacementMap: displacement,
@@ -128,7 +136,7 @@ function initBackground(){
         alphaTest: 0.005
     });
 
-    const planemat2 = new THREE.MeshStandardMaterial({
+    planeMaterial2 = new THREE.MeshStandardMaterial({
         color: '#CF9FFF',
         map: planeTexture,
         displacementMap: displacementRev,
@@ -139,23 +147,23 @@ function initBackground(){
         alphaTest: 0.005
     });
 
-    const tesseractMaterial = new THREE.LineBasicMaterial({ color: 0xCF9FFF });
+    tesseractMaterial = new THREE.LineBasicMaterial({ color: 0xCF9FFF });
     const tesseract = new THREE.LineSegments(tesseractGeometry, tesseractMaterial);
     tesseract.position.y += 2;
     scene.add(tesseract);
 
     tesseract.scale.set(0.25, 0.25, 0.25);
 
-    planemat.displacementScale = 3;
-    planemat2.displacementScale = -3;
+    planeMaterial.displacementScale = 3;
+    planeMaterial2.displacementScale = -3;
 
-    const plane = new THREE.Mesh(planegeo, planemat);
+    const plane = new THREE.Mesh(planegeo, planeMaterial);
     plane.rotation.x = -(Math.PI / 2);
     plane.position.y = -4;
     plane.renderOrder = 1;
     scene.add(plane);
 
-    const plane2 = new THREE.Mesh(planegeo, planemat2);
+    const plane2 = new THREE.Mesh(planegeo, planeMaterial2);
     plane2.rotation.x = (Math.PI / 2);
     plane2.position.y = -4;
     plane2.renderOrder = 1;
@@ -211,6 +219,22 @@ function initBackground(){
             }
         });
 
+        if (isTransitioning) {
+            const transitionSpeed = colorTransitionSpeed;
+
+            currentColor.lerp(targetColor, transitionSpeed);
+
+            tesseractMaterial.color.set(currentColor);
+            cubeMaterial.color.set(currentColor);
+            planeMaterial.color.set(currentColor);
+            planeMaterial2.color.set(currentColor);
+            spriteMaterial.color.set(currentColor);
+
+            if (currentColor.equals(targetColor)) {
+                isTransitioning = false;
+            }
+        }
+
         tesseract.rotation.x -= 0.001;
         tesseract.rotation.y -= 0.001;
         cube.rotation.x += 0.001;
@@ -227,3 +251,5 @@ function initBackground(){
     animate();
 }
 initBackground();
+
+export { initBackground, changeColor }

@@ -1,4 +1,5 @@
 import anime from 'animejs';
+import { changeColor } from './main.js';
 
 const homeButton = document.getElementById('home-button');
 const aboutButton = document.getElementById('about-button');
@@ -9,21 +10,23 @@ const linksButton = document.getElementById('links-button');
 let currentPage = '';
 let transitionStatus = false;
 
-function showPage(id) {
+function showPage(id, color) {
     if (transitionStatus) return;
 
     if (currentPage && currentPage.classList.contains(id)) return;
 
     transitionStatus = true;
 
+    changeColor(color)
+
     if (currentPage) {
         anime({
             targets: currentPage,
-            scale: [1, 0.9],
+            scale: [1, 0.8],
             opacity: [1, 0],
-            easing: 'easeInOutQuad',
+            easing: 'easeInExpo',
             duration: 1000,
-            translateY: [0, 100],
+            translateY: [0, 600],
             complete: function () {
                 currentPage.style.display = 'none';
                 showNewPage(id);
@@ -44,10 +47,10 @@ function showNewPage(id) {
         currentPage = selPage;
         anime({
             targets: selPage,
-            scale: [0.9, 1],
+            scale: [0.8, 1],
             opacity: [0, 1],
-            translateY: [-100, 0],
-            easing: 'easeInOutQuad',
+            translateY: [-600, 0],
+            easing: 'easeOutExpo',
             duration: 1000,
             complete: function () {
                 transitionStatus = false;
@@ -56,8 +59,8 @@ function showNewPage(id) {
     }
 }
 
-homeButton.addEventListener('click', () => showPage('page1'));
-aboutButton.addEventListener('click', () => showPage('page2'));
-contactButton.addEventListener('click', () => showPage('page3'));
-usageButton.addEventListener('click', () => showPage('page4'));
-linksButton.addEventListener('click', () => showPage('page5'));
+homeButton.addEventListener('click', () => showPage('page1', '#5F9EA0'));
+aboutButton.addEventListener('click', () => showPage('page2', '#7393B3'));
+contactButton.addEventListener('click', () => showPage('page3', '#5D3FD3'));
+usageButton.addEventListener('click', () => showPage('page4', '#FFB6C1'));
+linksButton.addEventListener('click', () => showPage('page5', '#D2042D'));
