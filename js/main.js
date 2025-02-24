@@ -122,7 +122,7 @@ function initBackground(){
 
     const planegeo = new THREE.PlaneGeometry(24, 24, 1024, 1024);
     const orbitControls = new OrbitControls(camera, renderer.domElement);
-    orbitControls.autoRotateSpeed = 0.5;
+    orbitControls.autoRotateSpeed = 0.25;
     orbitControls.autoRotate = true;
 
     planeMaterial = new THREE.MeshStandardMaterial({
